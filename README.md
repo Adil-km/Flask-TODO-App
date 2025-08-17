@@ -1,7 +1,7 @@
 # Flask TODO App
 
 A simple CRUD (Create, Read, Update, Delete) TODO application built with **Flask**.  
-This project is primarily for learning and getting familiar with the Flask framework.
+This project is primarily for me to learn and get familiar with the Flask framework.
 
 ## Table of Contents
 
