@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import Flask, redirect, request, render_template
+from flask import Flask, redirect, request, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
 import os
 
@@ -33,7 +33,7 @@ def index():
             return f"Error: {e}"
 
     else:
-        contents = db.session.query(Task.task, Task.id).order_by(Task.created_at.desc()).all()
+        contents = Task.query.order_by(Task.created_at.desc()).all()
         return render_template("index.html",contents=contents)
 
 @app.route("/delete/<int:id>")
@@ -47,11 +47,14 @@ def delete(id):
 @app.route("/edit/<int:id>", methods=["GET","POST"])
 def edit(id):
     task = db.get_or_404(Task, id)
-    db.session.delete(task)
-    db.session.commit()
-    return render_template("edit.html",content=task)
+    if request.method == "POST":
+        task.task = request.form['content']
+        db.session.commit()
+        return redirect("/")
+    else:
+        return render_template('edit.html', content = task)
 
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+    app.run()

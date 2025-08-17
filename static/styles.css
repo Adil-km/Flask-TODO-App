@@ -142,6 +142,7 @@ body{
     color: var(--background-color);
     padding: 5px 10px;
     border-radius: 15px;
+    font-size: 1rem;
 
     transition-duration: 0.1s;
     transition-timing-function: ease-out;
