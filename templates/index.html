@@ -1,5 +1,33 @@
 {% extends 'base.html' %}
 
 {% block body%}
-<h1>Hello World</h1>
+
+<div class="container">
+    <h1>Welcome to TODO app!</h1>
+
+    <form action="/" method="post">
+        <input type="text" name="content" id="input-task" tabindex="1" required placeholder="Write your task here....">
+        <input type="submit" value="Add" id="add-btn"  tabindex="2">
+    </form>
+
+    <div class="task-container">
+        <ul>
+            {% if contents %}
+                {% for content in contents%}
+                <li>{{content.task}}
+                    <div class="edit-delete">
+                        <a href="/edit/{{content.id}}" class="edit-btn">Edit</a>
+                        <a href="/delete/{{content.id}}" class="delete-btn">Delete</a>
+                    </div>
+                </li>
+                {% endfor%}
+            {% else %}
+            <h2>No tasks...</h2>
+            {% endif %}
+        </ul>
+    </div>
+
+</div>
+
+
 {% endblock body%}

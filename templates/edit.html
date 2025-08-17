@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body%}
+
+<div class="container">
+    <h1>Edit Your Task</h1>
+
+    {% if content %}
+    <form action="/" method="post">
+        <input type="text" name="content" tabindex="1" id="input-task" value="{{content.task}}" required placeholder="Write your task here....">
+        <input type="submit" value="Edit" id="add-btn"  tabindex="2">
+    </form>
+    {% endif%}
+</div>
+
+
+{% endblock body%}

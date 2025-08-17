@@ -6,9 +6,172 @@
   --secondary-background-color: #d9d9d9ff;
 }
 
+*{
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
     background-color: var(--background-color);
-    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
 }
 
+/* navbar section */
+.navbar{
+    background-color: var(--accent-color);
+    width: 100%;
+}
+.navbar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+.navbar a{
+    font-size: 1.3rem;
+    color: var(--background-color);
+    text-decoration: none;
+}
+
+/* body section */
+.container{
+    background-color: var(--secondary-background-color);
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 30px;
+    margin-block: 30px;
+    border-radius: 15px;
+    color: var(--accent-color);
+
+    box-shadow: 
+    -9px 11px 20px 0px #0000001c, 
+    inset -3px 3px 6px 2px #ebebeb,
+     inset 3px -8px 9px 0px #0000001a;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+    
+}
+.container:hover{
+    box-shadow: 
+    -9px 11px 20px 0px #00000021, 
+    inset -3px 3px 6px 2px #ebebeb,
+    inset 3px -8px 9px 0px #0000001a;
+}
+
+.container h1{
+    margin-bottom: 10px;
+}
+
+.container form{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-block: 10px;
+}
+.container #input-task{
+    font-size: 1rem;
+    flex-grow: 2;
+    padding-left: 10px;
+    padding-block: 10px;
+    border: none;
+    border-radius: 9px 0 0 9px;
+}
+.container #add-btn{
+    font-size: 1rem;
+    font-weight: bold;
+    flex-grow: 1;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    padding: 5px 10px;
+    border: none;
+    border-radius:0 9px 9px  0 ;
+
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+}
+.container #add-btn:hover{
+  background-color: var(--primary-color);
+}
+
+.container .task-container{
+    min-width: 450px;
+    max-width: 800px;
+}
+
+.container li{
+    border-radius: 9px;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+}
+.container li:hover{
+ background-color: rgba(0, 0, 0, 0.039);
+}
+
+.container .edit-delete{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+    padding: 10px 0 10px 10px;
+}
+.container .edit-delete a{
+    text-decoration: none;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    padding: 5px 10px;
+    border-radius: 15px;
+
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+
+}
+.container .edit-delete a:hover{
+    background-color: var(--primary-color);
+}
+
+
+/* footer section */
+.footer{
+    background-color: var(--accent-color);
+    width: 100%;
+    text-align: center;
+    padding-block: 10px;
+}
+
+.footer span{
+    color: var(--secondary-background-color);
+}
+.footer a{
+    text-decoration: none;
+    color: var(--secondary-background-color);
+    font-weight: bold;
+
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+}
+
+.footer a:hover{
+    color: var(--background-color);
+}

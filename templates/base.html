@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
 </head>
 <body>
+    <div class="navbar">
+        {% include 'navbar.html' %}
+    </div>
+    
     {% block body %}
     {% endblock body %}
+
+    <div class="footer">
+        {% include 'footer.html' %}
+    </div>
+
 </body>
 </html>
