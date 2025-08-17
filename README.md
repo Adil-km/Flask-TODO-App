@@ -25,7 +25,7 @@ This project is primarily for me to learn and get familiar with the Flask framew
 
 ## Tech Stack
 
-- **Python 3.x**
+- **Python 3.8**
 - **Flask** – web framework
 - **HTML/CSS** – frontend
 - **SQLite** – database for storing TODO items
