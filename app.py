@@ -20,8 +20,7 @@ class Task(db.Model):
     def __repr__(self):
         return f"{self.id}"
 
-@app.before_first_request
-def create_tables():
+with app.app_context():
     db.create_all()
 
 # Routes
