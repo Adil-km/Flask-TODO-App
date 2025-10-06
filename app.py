@@ -1,10 +1,17 @@
 from datetime import datetime
 from flask import Flask, redirect, request, render_template
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 import os
+
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
+
+CORS(app, origins=[
+    "http://127.0.0.1:5500",                  # local dev
+    "https://demo-project-landing-page.vercel.app"  # Vercel frontend
+])
 
 # Database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
