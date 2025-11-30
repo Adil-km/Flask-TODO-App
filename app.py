@@ -10,7 +10,11 @@ app.secret_key = os.urandom(24)
 
 CORS(app, origins=[
     "http://127.0.0.1:5500",                  # local dev
-    "https://demo-project-landing-page.vercel.app"  # Vercel frontend
+    "https://demo-project-landing-page.vercel.app" , # Vercel frontend
+    "http://localhost:5173",
+    "https://my-portfolio-git-main-adil-kms-projects.vercel.app", 
+    "https://my-portfolio-awci1rvd7-adil-kms-projects.vercel.app", 
+    "https://madebyadil.dev"
 ])
 
 # Database
