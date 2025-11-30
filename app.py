@@ -2,6 +2,7 @@ from datetime import datetime
 from flask import Flask, redirect, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+from flask import send_from_directory
 import os
 
 
@@ -33,6 +34,10 @@ class Task(db.Model):
 
 with app.app_context():
     db.create_all()
+
+@app.route('/ping.js')
+def serve_ping():
+    return send_from_directory('static', 'ping.js')
 
 # Routes
 @app.route("/", methods=["GET","POST"])

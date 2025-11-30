@@ -6,14 +6,14 @@
   --secondary-background-color: #d9d9d9ff;
 }
 
-*{
+* {
     color: var(--text-color);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: var(--background-color);
     display: flex;
     flex-direction: column;
@@ -23,11 +23,12 @@ body{
 }
 
 /* navbar section */
-.navbar{
+.navbar {
     background-color: var(--accent-color);
     width: 100%;
 }
-.navbar ul{
+
+.navbar ul {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -35,14 +36,15 @@ body{
     align-items: center;
     padding: 10px 50px;
 }
-.navbar a{
+
+.navbar a {
     font-size: 1.3rem;
     color: var(--background-color);
     text-decoration: none;
 }
 
 /* body section */
-.container{
+.container {
     background-color: var(--secondary-background-color);
     max-width: 90%;
     display: flex;
@@ -55,32 +57,33 @@ body{
     color: var(--accent-color);
 
     box-shadow: 
-    -9px 11px 20px 0px #0000001c, 
-    inset -3px 3px 6px 2px #ebebeb,
-     inset 3px -8px 9px 0px #0000001a;
+        -9px 11px 20px 0px #0000001c, 
+        inset -3px 3px 6px 2px #ebebeb,
+        inset 3px -8px 9px 0px #0000001a;
     transition-duration: 0.1s;
     transition-timing-function: ease-out;
-    
-}
-.container:hover{
-    box-shadow: 
-    -9px 11px 20px 0px #00000021, 
-    inset -3px 3px 6px 2px #ebebeb,
-    inset 3px -8px 9px 0px #0000001a;
 }
 
-.container h1{
+.container:hover {
+    box-shadow: 
+        -9px 11px 20px 0px #00000021, 
+        inset -3px 3px 6px 2px #ebebeb,
+        inset 3px -8px 9px 0px #0000001a;
+}
+
+.container h1 {
     margin-bottom: 10px;
 }
 
-.container form{
+.container form {
     font-size: 1.5rem;
     display: flex;
     flex-direction: row;
     width: 100%;
     margin-block: 10px;
 }
-.container #input-task{
+
+.container #input-task {
     font-size: 1rem;
     flex-grow: 2;
     padding-left: 10px;
@@ -88,7 +91,8 @@ body{
     border: none;
     border-radius: 9px 0 0 9px;
 }
-.container #add-btn{
+
+.container #add-btn {
     font-size: 1rem;
     font-weight: bold;
     flex-grow: 1;
@@ -96,21 +100,23 @@ body{
     color: var(--background-color);
     padding: 5px 10px;
     border: none;
-    border-radius:0 9px 9px  0 ;
+    border-radius: 0 9px 9px 0;
 
     transition-duration: 0.1s;
     transition-timing-function: ease-out;
 }
-.container #add-btn:hover{
-  background-color: var(--primary-color);
+
+.container #add-btn:hover {
+    background-color: var(--primary-color);
 }
 
-.container .task-container{
+.container .task-container {
     min-width: 450px;
     max-width: 800px;
+    width: 100%;
 }
 
-.container li{
+.container li {
     border-radius: 9px;
     font-size: 1.5rem;
     margin-top: 10px;
@@ -125,18 +131,20 @@ body{
     transition-duration: 0.1s;
     transition-timing-function: ease-out;
 }
-.container li:hover{
- background-color: rgba(0, 0, 0, 0.039);
+
+.container li:hover {
+    background-color: rgba(0, 0, 0, 0.039);
 }
 
-.container .edit-delete{
+.container .edit-delete {
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 5px;
     padding: 10px 0 10px 10px;
 }
-.container .edit-delete a{
+
+.container .edit-delete a {
     text-decoration: none;
     background-color: var(--accent-color);
     color: var(--background-color);
@@ -146,25 +154,25 @@ body{
 
     transition-duration: 0.1s;
     transition-timing-function: ease-out;
-
 }
-.container .edit-delete a:hover{
+
+.container .edit-delete a:hover {
     background-color: var(--primary-color);
 }
 
-
 /* footer section */
-.footer{
+.footer {
     background-color: var(--accent-color);
     width: 100%;
     text-align: center;
     padding-block: 10px;
 }
 
-.footer span{
+.footer span {
     color: var(--secondary-background-color);
 }
-.footer a{
+
+.footer a {
     text-decoration: none;
     color: var(--secondary-background-color);
     font-weight: bold;
@@ -173,6 +181,86 @@ body{
     transition-timing-function: ease-out;
 }
 
-.footer a:hover{
+.footer a:hover {
     color: var(--background-color);
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 1024px) {
+    .navbar ul {
+        padding: 10px 30px;
+    }
+
+    .container {
+        padding: 20px;
+        margin-block: 20px;
+    }
+
+    .container form {
+        font-size: 1.3rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container #input-task,
+    .container #add-btn {
+        width: 100%;
+        border-radius: 9px;
+    }
+
+    .container .task-container {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+
+    .navbar a {
+        font-size: 1.1rem;
+    }
+
+    .container h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .container li {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 1.2rem;
+    }
+
+    .container .edit-delete {
+        flex-direction: row;
+        gap: 5px;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .container form {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container h1 {
+        font-size: 1.3rem;
+    }
+
+    .container li {
+        font-size: 1rem;
+    }
+
+    .container #add-btn {
+        padding: 8px;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+    }
 }
